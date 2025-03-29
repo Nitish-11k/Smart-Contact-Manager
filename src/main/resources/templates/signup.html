@@ -36,12 +36,9 @@
     class="form-control" 
     id="name_field" 
     placeholder="Enter your name"
-    th:field="*{user.name}"
-    th:classappend="${#fields.hasErrors('name') ? 'is-invalid' : '' }"
+   th:value="${user.name}"
     aria-describedby="nameHelp" />
 
-    <div th:each="e : ${#fields.errors('name')}" th:text="${e}" class="invalid-feedback"></div>
-   
   </div>
   
   
@@ -55,7 +52,6 @@
     placeholder="Enter your email"
     th:value="${user.email}"
     aria-describedby="emailHelp">
-   
   </div>
   
   <div class="mb-3">

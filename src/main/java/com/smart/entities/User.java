@@ -10,8 +10,6 @@ import jakarta.persistence.GeneratedValue;
 import jakarta.persistence.GenerationType;
 import jakarta.persistence.Id;
 import jakarta.persistence.OneToMany;
-import jakarta.validation.constraints.NotBlank;
-import jakarta.validation.constraints.Pattern;
 import jakarta.validation.constraints.Size;
 
 @Entity
@@ -21,9 +19,9 @@ public class User {
 	@GeneratedValue(strategy = GenerationType.AUTO)
 	private int id;
 
-	@NotBlank(message = "Name cannot be blank")
+	
 	private String name;
-	@Pattern(regexp = "^[\\w-_\\.+]*[\\w-_\\.]\\@([\\w]+\\.)+[\\w]+[\\w]$" , message = "invalid email!!")
+
 	private String email;
 	private String password;
 	private String role;
