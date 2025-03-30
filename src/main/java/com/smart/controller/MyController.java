@@ -1,6 +1,7 @@
 package com.smart.controller;
 
 import org.springframework.beans.factory.annotation.Autowired;
+import org.springframework.security.crypto.bcrypt.BCryptPasswordEncoder;
 import org.springframework.stereotype.Controller;
 import org.springframework.ui.Model;
 import org.springframework.validation.BindingResult;
@@ -23,6 +24,9 @@ import jakarta.validation.Valid;
 
 @Controller
 public class MyController {
+
+    @Autowired
+    public BCryptPasswordEncoder passwordEncoder;
 
 	@Autowired
 	public UserRepository userRepository;
@@ -71,6 +75,7 @@ public String registerUser(@Valid
 
         user.setEnable(true);
         user.setRole("ROLE_USER");
+        user.setPassword(passwordEncoder.encode(user.getPassword()));
         this.userRepository.save(user);
         redirectAttributes.addFlashAttribute("message", new Message("Successfully registered!!", "alert-success"));
 
