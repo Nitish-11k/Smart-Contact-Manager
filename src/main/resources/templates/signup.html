@@ -35,9 +35,13 @@
     type="text" 
     class="form-control" 
     id="name_field" 
+    th:value="${user.name}"
+    th:classappend="${#fields.hasErrors('name') ? 'is-invalid' : ''}"
     placeholder="Enter your name"
-   th:value="${user.name}"
     aria-describedby="nameHelp" />
+
+    <div th:each="e : ${#fields.errors('name')}" th:text="${e}" class="invalid-feedback">
+    </div>
 
   </div>
   
@@ -48,10 +52,16 @@
     name="email"
     type="text" 
     class="form-control" 
+    th:value="${user.email}"
+    th:classappend="${#fields.hasErrors('email') ? 'is-invalid' : ''}"
     id="email_field" 
     placeholder="Enter your email"
-    th:value="${user.email}"
     aria-describedby="emailHelp">
+
+    <div th:each="e : ${#fields.errors('email')}" th:text="${e}" class="invalid-feedback">
+    </div>
+
+
   </div>
   
   <div class="mb-3">

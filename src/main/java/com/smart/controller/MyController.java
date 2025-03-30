@@ -51,9 +51,9 @@ public class MyController {
 	
 	@RequestMapping(value = "/register", method = RequestMethod.POST)
 public String registerUser(@Valid
-		@ModelAttribute("user") User user,
+		@ModelAttribute("user") User user, BindingResult result1,
                            @RequestParam(value = "agreement", defaultValue = "false") boolean agreement,
-                           Model model, RedirectAttributes redirectAttributes, BindingResult result1) {
+                           Model model, RedirectAttributes redirectAttributes) {
     try {
         System.out.println("Agreement : " + agreement);
         System.out.println("User : " + user);
@@ -71,8 +71,7 @@ public String registerUser(@Valid
 
         user.setEnable(true);
         user.setRole("ROLE_USER");
-
-        User result = this.userRepository.save(user);
+        this.userRepository.save(user);
         redirectAttributes.addFlashAttribute("message", new Message("Successfully registered!!", "alert-success"));
 
         return "redirect:/signup";  // Redirect instead of returning signup page directly
