@@ -54,7 +54,7 @@ public class MyController {
 	}
 	
 	@RequestMapping(value = "/register", method = RequestMethod.POST)
-public String registerUser(@Valid
+    public String registerUser(@Valid
 		@ModelAttribute("user") User user, BindingResult result1,
                            @RequestParam(value = "agreement", defaultValue = "false") boolean agreement,
                            Model model, RedirectAttributes redirectAttributes) {
@@ -89,6 +89,12 @@ public String registerUser(@Valid
         return "redirect:/signup";  // Redirect so flash attributes work properly
     }
 }
+
+   @GetMapping("/login")
+   public String loginPage(Model model){
+    model.addAttribute("title", "Login Page");
+    return "login";
+   }
 	
 	
 }

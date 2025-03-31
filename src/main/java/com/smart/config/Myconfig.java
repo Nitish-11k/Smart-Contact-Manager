@@ -43,7 +43,12 @@ public class Myconfig {
         .authorizeHttpRequests(auth->{
             try {
                 auth
-                .requestMatchers("/user/**").hasRole("USER").requestMatchers("/**").permitAll().anyRequest().authenticated().and().formLogin().and().csrf().disable();
+                .requestMatchers("/user/**").hasRole("USER")
+                .requestMatchers("/**").permitAll().anyRequest().authenticated()
+                .and().formLogin().loginPage("/login")
+                .loginProcessingUrl("/do-login")
+                .defaultSuccessUrl("/user/dashboard")
+                .and().csrf().disable();
             } catch (Exception e) {
                 e.printStackTrace();
             }

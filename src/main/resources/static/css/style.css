@@ -1,4 +1,6 @@
 body {
+	margin: 0;
+	padding: 0;
 	background-color: #e2e2e2;
 
 }
@@ -8,7 +10,7 @@ body {
 
 .banner{
 	
-	background: linear-gradient(rgba(0,0,0,.8), rgba(0,0,0,.8)) ,url(../img/web.jpg);
+	background: linear-gradient(rgba(0,0,0,.8), rgba(0,0,0,.8)) ,url(../img/web.jpg) no-repeat fixed;
 	width: 100%;
 	height: 97vh;
 	color:white;
@@ -21,3 +23,17 @@ body {
 	color: black;
 
 }
+
+#login .container #login-row #login-column #login-box {
+	margin-top: 100px;
+	max-width: 600px;
+	height: 400px;
+	border: 1px solid #9C9C9C;
+	background-color: #ffffff;
+  }
+  #login .container #login-row #login-column #login-box #login-form {
+	padding: 20px;
+  }
+  #login .container #login-row #login-column #login-box #login-form #register-link{
+	margin-top: -85px;
+  }

@@ -1,0 +1,36 @@
+body{
+    background: rgb(95, 67, 67);
+    color: white;
+}
+.nav-color{
+    background: rgb(127, 154, 86);
+}
+.user-dashboard{
+    background: linear-gradient(rgba(0,0,0,.1),rgba(0,0,0,.8)), url(../img/userdashbrd.jpg)no-repeat fixed;
+    width: 100%;
+    background-size: cover;
+    height: 93vh;
+}
+.operations{
+    display: flex;
+    justify-content: center;
+    gap: 30px;
+}
+.box{
+    padding: 10px 20px;
+    font-size: 12px;
+    border: 1px beige solid;
+    border-radius: 20px;
+    width: 100%;
+    cursor: pointer;
+    height: auto;
+    background: transparent;
+    margin-top: 20px;
+    transition: transform 0.4s ease-in-out;
+    
+}
+.box:hover{
+    background: linear-gradient(rgba(0,0,0,.2), rgba(0,0,0, .2)), white;
+    color: black;
+    transform: scale(1.1);
+}
