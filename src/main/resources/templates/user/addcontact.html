@@ -1,0 +1,92 @@
+<!DOCTYPE html>
+<html lang="en" xmlns:th="http://www.thymeleaf.org" th:replace="user/usermain:: layout(~{::section})">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Document</title>
+</head>
+<body>
+    <section class="d-flex justify-content-center">
+       <div class="card">
+        <div class="card-body">
+            <h1 class="text-center">Add Contact</h1>
+            <div class="container-fluid mt-2">
+                <div class="row">
+                    <div class="col-md-10 offset-md-1">
+                        <form action="#" 
+                              th:object="${contact}"
+                              enctype="multipart/form-data"
+                              method="post"
+                              th:action="@{/user/process}"
+                              class="mt-2">
+
+                              <div class="input-group mt-3">
+                                <div class="input-prepend ">
+                                    <div class="input-group-text">
+                                        <i class="fa fa-plus m-1"></i>
+                                    </div>
+                                </div>
+                                <input type="text" name="cName" id="cNameId" placeholder="Enter Name Here" class="form-control">
+                              </div>
+
+
+                              <div class="input-group mt-3">
+                                <div class="input-prepend">
+                                    <div class="input-group-text">
+                                        <i class="fas fa-user-alt m-1"></i>
+                                    </div>
+                                </div>
+                                <input type="text" name="nickName" id="cNickName" placeholder="Enter Nickname Here" class="form-control">
+                              </div>
+
+
+                              <div class="input-group mt-3">
+                                <div class="input-prepend">
+                                    <div class="input-group-text">
+                                        <i class="fas fa-mobile-alt m-1"></i>
+                                    </div>
+                                </div>
+                                <input type="text" name="phone" id="cPhone" placeholder="Enter Mobile Number Here" class="form-control">
+                              </div>
+
+
+
+                              <div class="input-group mt-3">
+                                <div class="input-prepend">
+                                    <div class="input-group-text">
+                                        <i class="fas fa-envelope m-1"></i>
+                                    </div>
+                                </div>
+                                <input type="email" name="email" id="Email" placeholder="Enter Email Here" class="form-control">
+                              </div>
+
+                              <div class="input-group mt-3">
+                                <div class="input-prepend">
+                                    <div class="input-group-text">
+                                        <i class="fas fa-user-tag m-1"></i>
+                                    </div>
+                                </div>
+                                <input type="text" name="status" id="Contact-Status" placeholder="Enter Status Here" class="form-control">
+                              </div>
+
+                              <div class="form-grop mt-3">
+                                <textarea placeholder="Enter About here" name="description" id="description" class="form-control" rows="5"></textarea>
+                              </div>
+
+                              <div class="container text-center">
+                                <div class="custom-file mt-3">
+                                    <input type="file" name="image" id="image">
+                                </div>
+                              </div>
+
+                              <div class="btn btn-primary mt-3 text-center d-flex justify-content-center align-items-center">Submit</div>
+
+                            </form>
+                    </div>
+                </div>
+            </div>
+        </div>
+       </div>
+    </section>
+</body>
+</html>

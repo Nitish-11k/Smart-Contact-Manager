@@ -1,5 +1,5 @@
 <!doctype html>
-<html lang="en" xmlns:th="http://www.thymeleaf.org" th:replace="usermain:: layout(~{::section})">
+<html lang="en" xmlns:th="http://www.thymeleaf.org" th:replace="user/usermain :: layout(~{::section})">
 <head>
 	<meta charset="UTF-8" />
 	<title>UserDashBoard</title>
@@ -11,24 +11,27 @@
 				<h1>Your DashBoard</h1>
 			</div>
 			<div class="operations">
-				<div class="box">
-					<div class="box-contain">
-						<h1>Check Details</h1>
-						<p>Check your saved contact list here</p>
-						
-					</div>
-				</div>
-
-				<div class="box">
-					<div class="box-contain">
-						<h1>Save<br>Contact</h1>
+				<a class="box" th:href="@{/user/addcontact}">
+				<div class=" mt-2">
+					<div class="box-contain mt-3">
+						<h1>Add Contact</h1>
 						<p>Quickly save details from your contact.
 							<br>
-							In just few clicks.
+							In just few clicks.</p>
+					</div>
+				</div>
+			</a>
+		
+
+			<a class="box" href="#">
+			<div class="mt-2">
+					<div class="box-contain mt-3">
+						<h1>Save<br>Contact</h1>
+						<p>Check your saved Contact List.
 						</p>
 					</div>
 				</div>
-				
+			</a>
 
 			</div>
 		</div>
