@@ -24,6 +24,12 @@ public class Contact {
 	
 	@ManyToOne
 	private User user;
+	public User getUser() {
+		return user;
+	}
+	public void setUser(User user) {
+		this.user = user;
+	}
 	public int getcId() {
 		return cId;
 	}
@@ -71,6 +77,12 @@ public class Contact {
 	}
 	public void setDescription(String description) {
 		this.description = description;
+	}
+	@Override
+	public String toString() {
+		return "Contact [cId=" + cId + ", cName=" + cName + ", nickName=" + nickName + ", status=" + status + ", image="
+				+ image + ", phone=" + phone + ", email=" + email + ", description=" + description + ", user=" + user
+				+ "]";
 	}
 	
 	
