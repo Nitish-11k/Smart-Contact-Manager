@@ -25,8 +25,8 @@ import jakarta.validation.Valid;
 @Controller
 public class MyController {
 
-    // @Autowired
-    // public BCryptPasswordEncoder passwordEncoder;
+    @Autowired
+    public BCryptPasswordEncoder passwordEncoder;
 
 	@Autowired
 	public UserRepository userRepository;
@@ -69,13 +69,13 @@ public class MyController {
         
         if(result1.hasErrors()) {
         	
-//        	model.addAttribute("user" , user);
+        	model.addAttribute("user" , user);
         	return "signup";
         }
 
         user.setEnable(true);
         user.setRole("ROLE_USER");
-        // user.setPassword(passwordEncoder.encode(user.getPassword()));
+         user.setPassword(passwordEncoder.encode(user.getPassword()));
         this.userRepository.save(user);
         redirectAttributes.addFlashAttribute("message", new Message("Successfully registered!!", "alert-success"));
 
